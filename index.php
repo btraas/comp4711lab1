@@ -43,6 +43,7 @@ $second->add_grade(50);
 $students['a456'] = $second;
 
 // Add myself
+// No grades - a test for divide by 0
 $me = new Student();
 $me->surname            = "Traas";
 $me->first_name         = "Brayden";
