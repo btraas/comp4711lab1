@@ -2,7 +2,7 @@
 
 /**
  * Created by PhpStorm.
- * User: Brayd
+ * User: Brayden
  * Date: 9/9/2017
  * Time: 3:59 PM
  *
@@ -33,6 +33,24 @@ class Student
         $this->grades[] = $grade;
     }
 
+
+    function average() {
+        $total = 0;
+        foreach($this->grades AS $value) {
+            $total += $value;
+        }
+        return $total / count($this->grades);
+    }
+
+    function toString() {
+        $result = $this->first_name . ' ' . $this->surname;
+        $result .= ' (' . $this->average(). ')' . PHP_EOL;
+        foreach($this->emails AS $which => $what) {
+            $result .= $which . ': ' . $what . PHP_EOL;
+        }
+        $result .= PHP_EOL;
+        return "<pre>$result</pre>";
+    }
 
 
 }
